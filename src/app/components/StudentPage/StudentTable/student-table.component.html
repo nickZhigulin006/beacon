@@ -1,0 +1,11 @@
+<div class="table">
+  <div class="table__options">
+    <input class="table__search_input" type="text" placeholder="Search students...">
+    <button class="btn btn-black fl-right" (click)="openModalWindow()">Add student</button>
+  </div>
+  <div class="table__body" *ngIf="bodyColumns.length">
+      <table class="table__body_datatable" datatable [dtOptions]="dtOptions"></table>
+  </div>
+  <app-add-student-modal [openModal]="openModal"></app-add-student-modal>
+</div>
+

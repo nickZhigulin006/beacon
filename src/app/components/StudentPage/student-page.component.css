@@ -1,0 +1,16 @@
+.app {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.app__header {
+  position: fixed;
+  width:100%;
+  top: 0;
+  left: 0 ;
+  height:50px;
+  z-index: 9999;
+}
+
+.app__body {
+  padding-top: 50px;
+}

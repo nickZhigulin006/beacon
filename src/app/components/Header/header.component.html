@@ -1,0 +1,95 @@
+<div class="navbar-header bg-black header">
+    <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>
+    <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+    <!-- brand -->
+    <a href class="navbar-brand text-lt">
+        <i class="fa fa-btc"></i>
+
+        <span class="hidden-folded m-l-xs">Beacon</span>
+    </a>
+    <!-- / brand -->
+</div>
+<!-- / navbar header -->
+
+<!-- navbar collapse -->
+<div class="collapse pos-rlt navbar-collapse box-shadow bg-black header">
+    <!-- buttons -->
+    <!-- / buttons -->
+    <!-- link and dropdown -->
+    <ul class="nav navbar-nav hidden-sm">
+        <li  routerLinkActive="active">
+            <a routerLink="/dashboard">
+                <span class="font-bold">Dashboard</span>
+            </a>
+        </li>
+        <li  routerLinkActive="active">
+            <a routerLink="/students">
+                <span class="font-bold">Students</span>
+            </a>
+        </li>
+        <li  routerLinkActive="active">
+            <a routerLink="/parents">
+                <span class="font-bold">Parents</span>
+            </a>
+        </li>
+        <li  routerLinkActive="active">
+            <a routerLink="/class_calender">
+                <span class="font-bold">Class calendar</span>
+            </a>
+        </li>
+        <li  routerLinkActive="active">
+            <a routerLink="/staff">
+                <span class="font-bold">Staff</span>
+            </a>
+        </li>
+        <li  routerLinkActive="active">
+            <a routerLink="/settings">
+                <span class="font-bold">Settings</span>
+            </a>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span><strong>New</strong></span> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Projects</a></li>
+                <li>
+                    <a href>
+                        <span class="badge bg-info pull-right">5</span>
+                        <span>Task</span>
+                    </a>
+                </li>
+                <li><a href>User</a></li>
+                <li class="divider"></li>
+                <li>
+                    <a href>
+                        <span class="badge bg-danger pull-right">4</span>
+                        <span>Email</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle clear" dropdown-toggle>
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="img/a0.jpg" alt="...">
+                <i class="on md b-white bottom"></i>
+              </span>
+                <span class="hidden-sm hidden-md">Test name</span> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight w">
+                <li>
+                    <a ng-click="logout()">Logout</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

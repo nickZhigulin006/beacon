@@ -1,0 +1,60 @@
+.left-menu {
+    width: 17%;
+    height: 100%;
+    margin: 1%;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #f0f3f4;
+    float: left;
+}
+
+.left-menu__select {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #555;
+}
+
+.left-menu__filter {
+    padding: 25px 15px;
+    border-bottom: 1px solid #f0f3f4;
+}
+
+.btn-clear {
+    float: right;
+}
+
+.left-menu__filter_header {
+    clear: both;
+    display: table;
+    width: 100%;
+}
+
+.left-menu__filter_text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn-clear {
+    float: right;
+    padding: 3px 7px !important;
+}
+
+.left-menu__label-select {
+    margin-bottom: 10px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 30px 2px 2px;
+    /*border: none; - if you want the border removed*/
+}
+

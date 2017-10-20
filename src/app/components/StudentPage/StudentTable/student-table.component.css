@@ -1,0 +1,57 @@
+.table {
+  display: inline-block;
+  width: 79%;
+  box-sizing: border-box;
+  margin: 1%;
+  height: 100%;
+}
+
+.table__body {
+  font-size: 1.5rem;
+  overflow: auto;
+}
+
+.table__body td, table__body th{
+  border-right: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding: 10px 5px;
+}
+
+.table__header, table__cell {
+  border-right: 1px solid #e9ecef;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  text-align: center;
+}
+
+.table__header {
+  padding: 8px 12px;
+}
+
+.table__options {
+  padding: 7px 0;
+}
+
+.btn-black {
+  height: 33px;
+  background-color: #333;
+  border: 1px solid #f0f3f4;
+  border-radius: 3px;
+  color: #ddd;
+  padding: 3px 13px;
+  cursor: pointer;
+}
+
+.table__search_input {
+  height: 27px;
+  padding-left: 15px;
+  width: 35%;
+  border: 1px solid #f0f3f4;
+  border-radius: 2px;
+}
+
+.fl-right {
+  float: right;
+}

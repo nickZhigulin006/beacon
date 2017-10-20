@@ -1,0 +1,46 @@
+<div class="left-menu">
+    <div class="left-menu__filter left-menu__filter_header">
+        <b class="left-menu__filter_text">Filters</b>
+        <button class="btn btn-black btn-clear" (click)="clearAll()">Clear All</button>
+    </div>
+    <div class="left-menu__filter">
+        <div class="left-menu__label-select"><b>Location</b></div>
+        <select class="left-menu__select" [(ngModel)]="filters.location" #location (change)="selectOptions('location', location.value)">
+            <option *ngFor="let el of _location" [value]="el.shortCode">
+                {{el.location}}
+            </option>
+        </select>
+    </div>
+    <div class="left-menu__filter">
+        <div class="left-menu__label-select"><b>Grade</b></div>
+        <select class="left-menu__select"[(ngModel)]="filters.grade"  #grade (change)="selectOptions('grade', grade.value)">
+            <option *ngFor="let el of _grade" [value]="el.shortCode">
+                {{el.grade}}
+            </option>
+        </select>
+    </div>
+    <div class="left-menu__filter">
+        <div class="left-menu__label-select"><b>Teacher</b></div>
+        <select class="left-menu__select" [(ngModel)]="filters.teacher" #teacher (change)="selectOptions('teacher', teacher.value)">
+            <option *ngFor="let el of _teacher" [value]="el.type">
+                {{el.type}}
+            </option>
+        </select>
+    </div>
+    <div class="left-menu__filter">
+        <div class="left-menu__label-select"><b>Subject</b></div>
+        <select class="left-menu__select" [(ngModel)]="filters.subject" #subject (change)="selectOptions('subject', subject.value)">
+            <option *ngFor="let el of _subject" [value]="el.type">
+                {{el.type}}
+            </option>
+        </select>
+    </div>
+    <div class="left-menu__filter">
+        <div class="left-menu__label-select"><b>Weekday</b></div>
+        <select class="left-menu__select" [(ngModel)]="filters.weekday" #weekday (change)="selectOptions('weekday', weekday.value)">
+            <option *ngFor="let el of _weekday" [value]="el.name">
+                {{el.name}}
+            </option>
+        </select>
+    </div>
+</div>

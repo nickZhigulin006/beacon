@@ -1,0 +1,8 @@
+.header__block {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav {
+    display: inline-block !important;
+}

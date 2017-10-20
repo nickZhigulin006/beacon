@@ -1,0 +1,141 @@
+<div class="table-modal " *ngIf="openModal">
+  <div class="table-modal__body"  [ngClass]="{'table-modal__body_open': openModal}">
+    <div class="table-modal__header-text">Add Student<span class="table-modal__close" (click)="openModal = false">X</span></div>
+    <hr>
+    <div [ngClass]="{'table-modal__nav_item-active': modalTabs.current == 'student'}"
+         class="table-modal__nav_item" (click)="openTab('student')">Student</div>
+    <div [ngClass]="{'table-modal__nav_item-active': modalTabs.current == 'parent1'}"
+         class="table-modal__nav_item" (click)="openTab('parent1')">Parent1</div>
+    <div [ngClass]="{'table-modal__nav_item-active': modalTabs.current == 'parent2'}"
+         class="table-modal__nav_item" (click)="openTab('parent2')">Parent2</div>
+    <div [ngClass]="{'table-modal__nav_item-active': modalTabs.current == 'enrollment'}"
+         class="table-modal__nav_item" (click)="openTab('enrollment')">Enrollment</div>
+    <div></div>
+    <div [hidden]="modalTabs.current != 'student'" class="table-modal__tab" id="Student">
+      <div class="table-modal__description">Enter Student Details</div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">First Name <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.first_name" type="text"
+               (focus)="focusError('first_name')" [ngClass]="{'error-input': this.errorArr.indexOf('first_name') > -1}"
+               class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Last Name <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.last_name" type="text" (focus)="focusError('last_name')" [ngClass]="{'error-input': this.errorArr.indexOf('last_name') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Grade <span class="require_star">*</span></b>
+        <select [(ngModel)]="student.grade_id" class="form-control table-modal__field_right" (focus)="focusError('grade_id')" [ngClass]="{'error-input': this.errorArr.indexOf('grade_id') > -1}">
+          <option value="false">Please choose</option>
+          <option value="1">Pre-K</option>
+          <option value="2">K</option>
+          <option value="3">1</option>
+          <option value="4">2</option>
+          <option value="5">3</option>
+          <option value="6">4</option>
+          <option value="7">5</option>
+          <option value="8">6</option>
+          <option value="9">7</option>
+        </select>
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Date of birth <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.date_of_birth" type="date" (focus)="focusError('date_of_birth')" [ngClass]="{'error-input': this.errorArr.indexOf('date_of_birth') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Address 1 <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.street1" type="text" (focus)="focusError('street1')" [ngClass]="{'error-input': this.errorArr.indexOf('street1') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Address 2</b>
+        <input [(ngModel)]="student.street2" type="text" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Zip <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.zip" type="text" (focus)="focusError('zip')" [ngClass]="{'error-input': this.errorArr.indexOf('zip') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">City <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.city" type="text" (focus)="focusError('city')" [ngClass]="{'error-input': this.errorArr.indexOf('city') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">State <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.state" type="text" (focus)="focusError('state')" [ngClass]="{'error-input': this.errorArr.indexOf('state') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field"  [ngClass]="{'error-input': this.errorArr.indexOf('enrichment_id') > -1}">
+        <b class="table-modal__field_left">Enrichment <span class="require_star">*</span></b>
+        <div class="table-modal__radio_right">
+          <div class="table-modal__radio" (click)="focusError('enrichment_id')"><input [(ngModel)]="student.enrichment_id" type="radio" class="pointer" name="enrichment_id" value="1" id="Enrichment"><label
+            for="Enrichment"><span></span> Enrichment</label></div>
+          <div class="table-modal__radio" (click)="focusError('enrichment_id')"><input  [(ngModel)]="student.enrichment_id" type="radio" class="pointer" name="enrichment_id" value="2" id="Remedial"><label
+            for="Remedial"><span></span> Remedial</label></div>
+        </div>
+      </div>
+      <div class="table-modal__field" [ngClass]="{'error-input': this.errorArr.indexOf('heard_from') > -1}">
+        <b class="table-modal__field_left">How did you hear about us <span class="require_star">*</span></b>
+        <div class="table-modal__radio_right">
+          <div class="table-modal__radio" (click)="focusError('heard_from')"><input  value="1" [(ngModel)]="student.heard_from" name="heard_from" type="radio" class="pointer" id="Online"><label
+            for="Online"><span></span> Online</label></div>
+          <div class="table-modal__radio" (click)="focusError('heard_from')" ><input value="2" [(ngModel)]="student.heard_from" name="heard_from" type="radio" class="pointer" id="Referral"><label
+            for="Referral"><span></span> Referral</label></div>
+          <div class="table-modal__radio" (click)="focusError('heard_from')"><input  value="3" [(ngModel)]="student.heard_from" name="heard_from" type="radio" class="pointer" id="Direct_Mail"><label
+            for="Direct_Mail"><span></span> Direct Mail</label></div>
+          <div class="table-modal__radio" (click)="focusError('heard_from')"><input  value="4" [(ngModel)]="student.heard_from" name="heard_from" type="radio" class="pointer" id="Yard_Sign"><label
+            for="Yard_Sign"><span></span> Yard Sign</label></div>
+          <div class="table-modal__radio" (click)="focusError('heard_from')"><input  value="5" [(ngModel)]="student.heard_from" name="heard_from" type="radio" class="pointer" id="Walk_in"><label
+            for="Walk_in"><span></span> Walk in</label></div>
+        </div>
+      </div>
+    </div>
+
+    <div [hidden]="modalTabs.current != 'parent1'" class="table-modal__tab" disabled id="Parent1">
+      <div class="table-modal__description">Enter Parent 1 Details</div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">First Name <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.first_name1" type="text"
+               (focus)="focusError('first_name1')" [ngClass]="{'error-input': this.errorArr.indexOf('first_name1') > -1}"
+               class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Last Name <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.last_name1" type="text" (focus)="focusError('last_name1')" [ngClass]="{'error-input': this.errorArr.indexOf('last_name1') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Email <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.parent_email_1" type="text" (focus)="focusError('parent_email_1')" [ngClass]="{'error-input': this.errorArr.indexOf('parent_email_1') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Cell no. <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.parent_cell_no_1" type="text" (focus)="focusError('parent_cell_no_1')" [ngClass]="{'error-input': this.errorArr.indexOf('parent_cell_no_1') > -1}" class="form-control table-modal__field_right">
+      </div>
+    </div>
+
+    <div [hidden]="modalTabs.current != 'parent2'" class="table-modal__tab" disabled id="Parent2">
+      <div class="table-modal__description">Enter Parent 2 Details</div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">First Name <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.first_name2" type="text"
+               (focus)="focusError('first_name2')" [ngClass]="{'error-input': this.errorArr.indexOf('first_name2') > -1}"
+               class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Last Name <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.last_name2" type="text" (focus)="focusError('last_name2')" [ngClass]="{'error-input': this.errorArr.indexOf('last_name2') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Email <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.parent_email_2" type="text" (focus)="focusError('parent_email_2')" [ngClass]="{'error-input': this.errorArr.indexOf('parent_email_2') > -1}" class="form-control table-modal__field_right">
+      </div>
+      <div class="table-modal__field">
+        <b class="table-modal__field_left">Cell no. <span class="require_star">*</span></b>
+        <input [(ngModel)]="student.parent_cell_no_2" type="text" (focus)="focusError('parent_cell_no_2')" [ngClass]="{'error-input': this.errorArr.indexOf('parent_cell_no_2') > -1}" class="form-control table-modal__field_right">
+      </div>
+    </div>
+
+    <div [hidden]="modalTabs.current != 'enrollment'" class="table-modal__tab" disabled id="Enrollment"></div>
+    <div class="table-modal__btn-block">
+      <button class="btn btn-black" (click)="openModal = false">Close</button>
+      <button class="btn btn-black" (click)="send()">Send</button>
+    </div>
+  </div>
+</div>

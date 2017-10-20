@@ -1,0 +1,162 @@
+.table-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, 0.52);
+}
+
+.hide {
+    display: none;
+}
+
+.table-modal__body {
+    background-color: #fff;
+    width: 0;
+    height: 100%;
+    right: 0;
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.table-modal__body_open {
+    animation: modal 0.6s forwards;
+    padding: 10px 20px;
+}
+
+@keyframes modal {
+    from {width: 0%}
+    to {width: 50%}
+}
+
+.table-modal__close {
+    float: right;
+    font-size: 12px;
+    color: #333;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.table-modal__close:hover {
+    opacity: 1;
+}
+
+.table-modal__header-text {
+    font-size: 24px;
+}
+
+.table-modal__nav_item {
+    display: inline-block;
+    width: 24%;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+}
+
+.table-modal__nav_item-active {
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+}
+
+.table-modal__field {
+    margin: 30px 10% 0 5%;
+    border-bottom: 1px dashed #ddd;
+}
+
+.table-modal__field_left {
+    display: inline-block;
+    width: 35%;
+    padding-left: 5%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.table-modal__field_right {
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    width: 64%;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.table-modal__radio_right {
+    width: 64%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.table-modal__description {
+    padding: 15px;
+    padding-bottom: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.require_star {
+    color: #b40000;
+}
+
+.error-input {
+    border: 1px solid #b40000;
+}
+
+.table-modal__btn-block {
+    margin: 15px;
+    text-align: right;
+}
+
+.table-modal__tab {
+    border: 1px solid #f3f3f3;
+    height: calc(100% - 180px);;
+    overflow: auto;}
+
+label {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color: #292321;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+input[type="radio"] + label span {
+    background-color:#FFF;
+    border: 1px solid #9d9d9d;
+}
+
+input[type="radio"]:checked + label span{
+    background-color:#333;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+    -webkit-transition:background-color 0.4s linear;
+    -o-transition:background-color 0.4s linear;
+    -moz-transition:background-color 0.4s linear;
+    transition:background-color 0.4s linear;
+}
